@@ -2,5 +2,3 @@
 build
 coverage
 dist/*
-
-.DS_Store

@@ -15,4 +15,5 @@ node_modules
 dist
 
 
+chrome-ext.zip
 .DS_Store

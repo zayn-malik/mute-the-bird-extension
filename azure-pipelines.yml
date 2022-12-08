@@ -42,5 +42,6 @@ steps:
     action: 'create'
     target: '$(Build.SourceVersion)'
     tagSource: 'gitTag'
+    tagPattern: 'dev'
     isDraft: true
     addChangeLog: false

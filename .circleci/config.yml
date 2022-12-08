@@ -16,6 +16,10 @@ jobs:
       - image: cimg/base:stable
     steps:
       - node/install-packages:
+          with-cache: true 
+          cache-only-lockfile: true 
+          include-branch-in-cache-key: true 
+          check-cache: always 
           pkg-manager: yarn-berry 
 
 workflows:

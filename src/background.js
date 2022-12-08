@@ -30,7 +30,8 @@ chrome.contextMenus.onClicked.addListener((item) => {
 // maybe add a message in the popup if the token was not provided
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-    chrome.tabs.create({ url: "options.html" });
+    // chrome.tabs.create({ url: "options.html" });
+    chrome.runtime.openOptionsPage();
   }
 });
 

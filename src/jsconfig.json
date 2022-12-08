@@ -1,7 +1,10 @@
 {
-    "typeAcquisition": {
-        "include": [
-            "chrome"
-        ]
-    }
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "es6"
+  },
+  "exclude": ["node_modules", "**/node_modules", "dist"],
+  "typeAcquisition": {
+    "include": ["chrome"]
+  }
 }

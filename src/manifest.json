@@ -13,7 +13,7 @@
         "type": "module"
     },
     "action": {
-        "default_popup": "popup/popup.html",
+        "default_popup": "popup.html",
         "default_icon": {
             "16": "images/minus-circle16.png",
             "32": "images/minus-circle32.png",
@@ -30,5 +30,8 @@
         "https://twitter.com/*",
         "https://api.twitter.com/*"
     ],
-    "options_page": "options/options.html"
+    "options_ui": {
+        "open_in_tab": true,
+        "page": "options.html"
+    }
 }

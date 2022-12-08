@@ -39,9 +39,8 @@ steps:
   inputs:
     gitHubConnection: 'mute-the-bird-repo'
     repositoryName: 'zayn-malik/mute-the-bird-extension'
-    action: 'create'
+    action: 'edit'
     target: '$(Build.SourceVersion)'
-    tagSource: 'gitTag'
-    tagPattern: 'dev'
+    tag: 'dev'
     isDraft: true
     addChangeLog: false

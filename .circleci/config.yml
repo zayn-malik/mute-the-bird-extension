@@ -9,20 +9,11 @@ orbs:
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  example-job:
-    docker:
-      # replace with your preferred image
-      - image: cimg/base:stable
-    steps:
-      - node/install-packages:
-          with-cache: true 
-          cache-only-lockfile: true 
-          include-branch-in-cache-key: true 
-          check-cache: always 
-          pkg-manager: yarn-berry 
 
 workflows:
-  example-workflow:
-    jobs:
-      - example-job
+    example-workflow:
+      jobs:
+        - node/run:
+            setup: install 
+            pkg-manager: yarn-berry 
+            yarn-run: build 

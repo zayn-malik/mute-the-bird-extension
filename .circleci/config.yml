@@ -13,6 +13,5 @@ workflows:
     example-workflow:
       jobs:
         - node/run:
-            setup: "install" 
             pkg-manager: yarn-berry 
             yarn-run: build 

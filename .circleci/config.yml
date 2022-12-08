@@ -16,11 +16,9 @@ jobs:
       - image: cimg/base:stable
     steps:
       - node/install-packages:
-          pkg-manager: npm 
-          cache-only-lockfile: true 
+          pkg-manager: yarn-berry 
 
 workflows:
-    example-workflow:
-      jobs:
-        - node/run:
-            npm-run: build 
+  example-workflow:
+    jobs:
+      - example-job

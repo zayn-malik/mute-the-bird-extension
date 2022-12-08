@@ -2,22 +2,22 @@
   "name": "twitter-mute-ext",
   "packageManager": "yarn@3.2.2",
   "devDependencies": {
-    "@parcel/config-webextension": "^2.8.0",
+    "@parcel/config-webextension": "^2.8.1",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react": "^1.1.7",
-    "eslint-plugin-react": "latest",
+    "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "parcel": "^2.8.0",
+    "parcel": "^2.8.1",
     "postcss": "^8.4.19",
-    "prettier": "2.8.0",
+    "prettier": "2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.0",
     "process": "^0.11.10",
     "tailwindcss": "^3.2.4"
   },
   "scripts": {
-    "start": "parcel watch src/manifest.json src/options/options.html src/popup/popup.html --host localhost --config @parcel/config-webextension",
-    "build": "parcel build src/manifest.json src/options/options.html src/popup/popup.html --config @parcel/config-webextension"
+    "start": "parcel watch src/manifest.json --host localhost",
+    "build": "parcel build src/manifest.json"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.4",

@@ -6,8 +6,9 @@ build:
 	yarn build
 
 package:
-	zip -r chrome-ext.zip dist
+	zip -r extension.zip dist
 
 clean:
 	rm -rf dist	
+	rm -f extension.zip
 

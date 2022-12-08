@@ -34,3 +34,13 @@ steps:
     targetPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     artifact: 'extension.zip'
     publishLocation: 'pipeline'
+
+- task: GitHubRelease@1
+  inputs:
+    gitHubConnection: 'mute-the-bird-repo'
+    repositoryName: 'zayn-malik/mute-the-bird-extension'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'gitTag'
+    isDraft: true
+    addChangeLog: false

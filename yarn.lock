@@ -56,15 +56,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/react@npm:^1.7.4":
-  version: 1.7.4
-  resolution: "@headlessui/react@npm:1.7.4"
+"@headlessui/react@npm:^1.7.5":
+  version: 1.7.5
+  resolution: "@headlessui/react@npm:1.7.5"
   dependencies:
     client-only: ^0.0.1
   peerDependencies:
     react: ^16 || ^17 || ^18
     react-dom: ^16 || ^17 || ^18
-  checksum: cd7192aa0748d715ed0da94435f217a1a618894a09df722c8b6ac0967c0c2f93b4c1e6b29c4993a3303dc453b20b05323d2a37239408740391989a64b7dce38c
+  checksum: 0658251a38a23cb6e41bc4edb15184fa8a5470f57f8c9d948a1aa5ce4da5b1d6ec24ac488ce5d5dbf0ed49c0ad1f147a03db4d6661262eb60a1eed299527a0f0
   languageName: node
   linkType: hard
 
@@ -3832,6 +3832,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.41.0":
+  version: 7.41.0
+  resolution: "react-hook-form@npm:7.41.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 72107a7f2f1d9981c323b93046e6495a910d7a0db93004a207a455d3166ca5b76d245b02a67e96a4d436b7a821c16c0a645e01afd876d6f35b0db750ed2e7ae6
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -4405,7 +4414,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "twitter-mute-ext@workspace:."
   dependencies:
-    "@headlessui/react": ^1.7.4
+    "@headlessui/react": ^1.7.5
     "@parcel/config-webextension": ^2.8.1
     eslint: ^8.29.0
     eslint-config-prettier: ^8.5.0
@@ -4419,6 +4428,7 @@ __metadata:
     process: ^0.11.10
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-hook-form: ^7.41.0
     react-spinners: ^0.13.7
     tailwindcss: ^3.2.4
   languageName: unknown

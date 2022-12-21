@@ -5,21 +5,7 @@
   </head>
 
   <body class="bg-white dark:bg-slate-900">
-    <div class="mx-auto mt-6 grid max-w-sm grid-rows-2 justify-items-center">
-      <form class="dark:text-white" id="myForm">
-        <input
-          class="mt-1 w-64 rounded-md border border-slate-300 bg-white py-2 text-slate-800 shadow-sm placeholder:text-center placeholder:italic placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-900 disabled:shadow-none dark:text-slate-800 sm:text-sm"
-          placeholder="bearer token"
-          id="token"
-          name="name"
-        />
-        <input
-          class="mt-5 rounded-full bg-blue-300 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus:ring focus:ring-blue-300 active:bg-blue-700"
-          type="submit"
-        />
-      </form>
-    </div>
-
-    <script src="options.js"></script>
+    <div id="root"></div>
+    <script type="module" src="options.jsx"></script>
   </body>
 </html>

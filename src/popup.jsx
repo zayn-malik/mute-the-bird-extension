@@ -9,8 +9,9 @@ function App() {
       { url: "https://twitter.com", name: "ct0" },
       (response) => {
         let csrf_token = response.value;
-        chrome.storage.local.get("optionsToken", function (result) {
-          listKeywords(result.optionsToken, csrf_token)
+        chrome.storage.local.get("bearer", function (result) {
+          console.log(result);
+          listKeywords(result.bearer, csrf_token)
             .then((r) => r.json())
             .then((result) => {
               setWords(result.muted_keywords);
@@ -31,7 +32,7 @@ function App() {
         type="button"
         onClick={(e) => {
           console.debug("clicked on remove word button");
-          testDestroy(item.id);
+          removeWord(item.id);
           const filtered = words.filter((obj) => obj.id != item.id);
           setWords(filtered);
         }}
@@ -98,14 +99,14 @@ function destroyWord(id, bearerToken, csrfToken) {
   });
 }
 
-function testDestroy(id) {
+function removeWord(id) {
   chrome.cookies.get(
     { url: "https://twitter.com", name: "ct0" },
     (response) => {
       let csrf_token = response.value;
 
-      chrome.storage.local.get("optionsToken", function (result) {
-        destroyWord(id, result.optionsToken, csrf_token)
+      chrome.storage.local.get("bearer", function (result) {
+        destroyWord(id, result.bearer, csrf_token)
           .then((res) => {
             console.debug("removing word", res);
           })

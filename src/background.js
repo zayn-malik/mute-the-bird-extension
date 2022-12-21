@@ -19,8 +19,8 @@ chrome.contextMenus.onClicked.addListener((item) => {
     { url: "https://twitter.com", name: "ct0" },
     (response) => {
       let csrfToken = response.value;
-      chrome.storage.local.get("optionsToken", function (result) {
-        muteKeyword(result.optionsToken, item.selectionText, csrfToken);
+      chrome.storage.local.get("bearer", function (result) {
+        muteKeyword(result.bearer, item.selectionText, csrfToken);
       });
     }
   );
@@ -33,6 +33,9 @@ chrome.runtime.onInstalled.addListener((details) => {
     // chrome.tabs.create({ url: "options.html" });
     chrome.runtime.openOptionsPage();
   }
+
+  // auto create and set debug flag to false
+  chrome.storage.local.set({ debug: false });
 });
 
 function muteKeyword(bearerToken, word, csrfToken) {
@@ -55,3 +58,40 @@ function muteKeyword(bearerToken, word, csrfToken) {
     method: "POST",
   });
 }
+
+function logStorageChange(changes, namespace) {
+  for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+    console.log(
+      `Storage key "${key}" in namespace "${namespace}" changed.`,
+      `Old value was "${oldValue}", new value is "${newValue}".`
+    );
+  }
+}
+
+function setDebugMode(debugMode) {
+  switch (debugMode) {
+    case true:
+      chrome.storage.onChanged.addListener(logStorageChange);
+      break;
+    case false:
+      chrome.storage.onChanged.removeListener(logStorageChange);
+      break;
+  }
+
+  // if (debugMode) {
+  //   chrome.storage.onChanged.addListener(logStorageChange);
+  // } else {
+  //   chrome.storage.onChanged.removeListener(logStorageChange);
+  // }
+}
+
+// Watch for changes to the user's options & apply them
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === "local" && changes.debug?.newValue) {
+    const debugMode = Boolean(changes.debug.newValue);
+    console.log("enabling debug mode", debugMode);
+    setDebugMode(debugMode);
+  }
+});
+
+// TODO an import - export word list
